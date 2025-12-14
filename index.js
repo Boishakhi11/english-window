@@ -6,10 +6,28 @@ const loadLesson = () => {
     .then(json => displayLessons(json.data)); 
 }
 
+const removeActive = () => {
+    const lessonButtons = document.querySelectorAll(".lesson-btn");
+    lessonButtons.forEach (btn => btn.classList.remove("active"));
+
+}
+
 const loadLevelWord = (levelNo) => {
     fetch(`https://openapi.programming-hero.com/api/level/${levelNo}`)
     .then(res => res.json())
-    .then(data => displayLevelWord(data.data));
+    .then(data => {
+        removeActive();
+        const clickBtn = document.getElementById(`lesson-btn-${levelNo}`);
+        clickBtn.classList.add("active");
+        displayLevelWord(data.data)});
+}
+
+const loadWordDetail = async(id) => {
+    const url = `https://openapi.programming-hero.com/api/word/${id}`;
+    console.log(url);
+    const res = await fetch(url);
+    const details = await res.json();
+    console.log(details);
 }
 
 const displayLevelWord = (words) => {
@@ -34,7 +52,7 @@ const displayLevelWord = (words) => {
             <p class="text-[28px] font-bold" >"${word.meaning ? word.meaning : "No Word Meaning Found"}/ ${word.pronunciation ? word.pronunciation : "No Pronunciation Found"
             }"</p>
             <div class="flex justify-between items-center">
-                <i class="fa-solid fa-circle-info bg-[#1A91FF10] cursor-pointer hover:bg-[#1A91FF80]"></i>
+                <button onclick="loadWordDetail(${word.id})" class="bg-[#1A91FF10] cursor-pointer hover:bg-[#1A91FF80]"><i class="fa-solid fa-circle-info"></i></button>
                 <i class="fa-solid fa-volume-high bg-[#1A91FF10] cursor-pointer hover:bg-[#1A91FF80]"></i>
             </div>
         </div>`
@@ -53,9 +71,11 @@ const displayLessons = (lessons) => {
         console.log(lesson);
         const lessonDiv = document.createElement("div");
         lessonDiv.innerHTML = 
-        `<button onClick="loadLevelWord(${lesson.level_no})" class="flex gap-1 items-center border border-[#422AD5] rounded-md p-2 cursor-pointer"> 
-        <img src="./assets/fa-book-open.png">
-         Learn ${lesson.level_no}
+        `<button id = "lesson-btn-${lesson.level_no}" 
+            onClick="loadLevelWord(${lesson.level_no})" 
+            class="flex gap-1 items-center border border-[#422AD5] rounded-md p-2 cursor-pointer lesson-btn"> 
+            <img src="./assets/fa-book-open.png">
+            Learn ${lesson.level_no}
          </button>`
 
         lessonContainer.append(lessonDiv);

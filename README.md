@@ -1,6 +1,4 @@
-# ENGLISH <img width="25px" src="./assets/logo.png" /> JANALA
-
-# 📘 English Window – Learn English Easily
+# ENGLISH <img width="25px" src="./assets/logo.png" /> Window (Learn English Easily)
 
 English Window is a simple, responsive web application designed to help users learn English vocabulary through interactive lessons. The project focuses on clean UI, accessibility, and beginner-friendly design using modern frontend tools.
 

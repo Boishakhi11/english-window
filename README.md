@@ -1,116 +1,82 @@
 # ENGLISH <img width="25px" src="./assets/logo.png" /> JANALA
 
----
+# 📘 English Window – Learn English Easily
 
-## ⚡ API Endpoints
-
-1. Get ⚡ All Levels
-
-```bash
-https://openapi.programming-hero.com/api/levels/all
-```
-
-1. Get ⚡ Words by Levels <br/>
-   https:// openapi.programming-hero.com/api/level/{id}
-
-```bash
-https://openapi.programming-hero.com/api/level/5
-```
-
-1. Get ⚡ Words Detail <br/>
-   https:// openapi.programming-hero.com/api/word/{id}
-
-```bash
-https://openapi.programming-hero.com/api/word/5
-```
-
-1. Get ⚡ All Words <br/>
-
-```bash
-https://openapi.programming-hero.com/api/words/all
-```
-
-# Work To do
-
-### 1. Show Levels on The UI
-
-- [ ] Show a center-aligned heading as Figma
+English Window is a simple, responsive web application designed to help users learn English vocabulary through interactive lessons. The project focuses on clean UI, accessibility, and beginner-friendly design using modern frontend tools.
 
 ---
 
-- [ ] Create dynamically generated buttons from **API-01** for each lesson
-- [ ] Lesson Buttons will be displayed on page load
+## 🚀 Features
+
+- 🎯 **Interactive Vocabulary Lessons**
+- 🔍 **Search Words Easily**
+- 📚 **Lesson-based Vocabulary Learning**
+- 🧩 **Modal Popup for Word Details and audio availble for words**
+- 📱 **Responsive Design (Mobile & Desktop)**
+- 🎨 **Modern UI with Tailwind CSS & DaisyUI**
 
 ---
 
-### 2. Show Word Cards Based on Level
+## 🛠️ Technologies Used
 
-- [ ] Show a default text that will be displayed in the Vocabulary section initially
-- [ ] on Clicking a Specific Lesson Button Load All the words from **API-02**
-- [ ] Display all words for a selected lesson in a card format, showing:
+- **HTML5**
+- **CSS3**
+- **Tailwind CSS**
+- **DaisyUI**
+- **JavaScript (Vanilla)**
+- **Font Awesome Icons**
+- **Google Fonts (Poppins)**
 
-  - [ ] Word
-  - [ ] Word meaning & pronunciation
-  - [ ] Two buttons with relevant icons as per Figma
-
-- [ ] Show **\*No Word Found** message if no words exist for a lesson
-
----
-
-- [ ] Create functionality to highlight the active lesson button
 
 ---
 
-### 3. Use Different Color on The Active Level Button
+## 🖥️ UI Sections Overview
 
-- [ ] After Successfully Loading words of a level , diffirentiate the button so user can understand which button is active
+### 🔹 Header
+- Logo and branding
+- Navigation buttons: **FAQ**, **Learn**, **Logout**
 
-### 4. Vocabulary Details
+### 🔹 Hero Section
+- Motivational heading
+- Short description
+- Email & password input form
+- Call-to-action button
 
-- [ ] Create functionality to open a modal when clicking the details icon
-- [ ] Data will be load from **API-03**
-- [ ] modal will displays:
-  - [ ] Word with pronunciation
-  - [ ] Example sentence
-  - [ ] Synonyms
-  - [ ] A "Complete Learning" button to close the modal
+### 🔹 Vocabulary Lessons
+- Dynamic lesson buttons
+- Lessons loaded via JavaScript
 
-### 5. Handling Invalid Data
+### 🔹 Search Section
+- Search vocabulary by word
+- User-friendly input field
 
-- [ ] avoid displaying falsy values like `undefined` or `null`
-- [ ] display relevant words if no data is found
+### 🔹 Word Display Area
+- Shows words based on selected lesson
+- Default message when no lesson is selected
 
-### 6. Loading Spinner
+### 🔹 Modal
+- Displays detailed word information
+- Uses `<dialog>` element (DaisyUI modal)
 
-- [ ] Create a loading spinner that will be display when vocabulary is loading from API
-
-### 7. Implement Search Functionality
-
-- [ ] Take a input Box.
-- [ ] on Changing value It will Search word and show in the UI.
-- [ ] If anyone Do search reset active button
-
-### 8. Save Word Feature
-
-- [ ] in the UI of Card add a button `Heart icon`
-- [ ] on Clicking it. Store the Word in the Saved Box
-- [ ] Show Saved words in a Different Section.
-
-### 9. Speak your Vocabularies
-
-- [ ] Create functionality for voice pronunciation of vocabulary words
-- [ ] Use below function and implement on clicking sound icon
-
-```js
-function pronounceWord(word) {
-  const utterance = new SpeechSynthesisUtterance(word);
-  utterance.lang = "en-EN"; // English
-  window.speechSynthesis.speak(utterance);
-}
-```
-
-For More >> you can explore this implementation 👉 [https://codepen.io/Ferdous-Zihad/pen/PwoJMmJ](https://codepen.io/Ferdous-Zihad/pen/PwoJMmJ)
+### 🔹 Footer
+- Branding
+- Social media icons
 
 ---
-Bonus : How to create Private Repository for next assignments
-## Test Repo - :  https://classroom.github.com/a/Fgjib-lr
+
+## ⚙️ How to Run the Project Locally
+
+1. Clone the repository:
+   ```bash
+   https://github.com/Boishakhi11/english-window.git
+
+
+Navigate to the project folder:
+
+cd english-window
+
+
+Open index.html in your browser
+(No server required)
+
+

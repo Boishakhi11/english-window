@@ -1,3 +1,9 @@
+function pronounceWord(word) {
+  const utterance = new SpeechSynthesisUtterance(word);
+  utterance.lang = "en-EN"; // English
+  window.speechSynthesis.speak(utterance);
+}
+
 const url = "https://openapi.programming-hero.com/api/levels/all"; 
 
 const createElement = (arr) => {
@@ -81,8 +87,8 @@ const displayLevelWord = (words) => {
             <p class="text-[28px] font-bold" >"${word.meaning ? word.meaning : "Nothing Found"}/ ${word.pronunciation ? word.pronunciation : "No Pronunciation Found"
             }"</p>
             <div class="flex justify-between items-center">
-                <button onclick="loadWordDetail(${word.id})" class="bg-[#1A91FF10] cursor-pointer hover:bg-[#1A91FF80]"><i class="fa-solid fa-circle-info"></i></button>
-                <i class="fa-solid fa-volume-high bg-[#1A91FF10] cursor-pointer hover:bg-[#1A91FF80]"></i>
+                <button class="btn bg-[#1A91FF10] cursor-pointer hover:bg-[#1A91FF80]" onclick="loadWordDetail(${word.id})" class=""><i class="fa-solid fa-circle-info"></i></button>
+                <button class="btn bg-[#1A91FF10] cursor-pointer hover:bg-[#1A91FF80]" onclick= "pronounceWord('${word.word}')"><i class="fa-solid fa-volume-high "></i> </button>
             </div>
         </div>`
 

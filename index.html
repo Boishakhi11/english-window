@@ -21,7 +21,7 @@
 </head>
 <body class="p-3">
     <header>
-        <div class="flex justify-between items-center bg-base-100 shadow-sm">
+        <div class="flex justify-between items-center bg-base-100 shadow-sm w-11/12 mx-auto">
         <div class="flex gap-1 items-center">
                 <span class="font-bold">English</span>
                 <img class="h-full w-full" src="./assets/logo.png" alt="image of english window">
@@ -79,10 +79,7 @@
         </div>
     </section>
 
-    
-
-    <!-- Open the modal using ID.showModal() method -->
-        <dialog id="modal_box" class="modal">
+     <dialog id="modal_box" class="modal">
         <div class="modal-box">
             <div id="display-details-container">
             </div>     
@@ -93,7 +90,29 @@
             </form>
             </div>
         </div>
-        </dialog>
+    </dialog>
+
+    <footer class="flex flex-col items-center md:justify-between  w-11/12 mx-auto mt-20 border-t-2 px-2">
+         <div class="space-y-4">
+            <div class="flex gap-1 items-center mt-2">
+                <span class="font-bold">English</span>
+                <img class="" src="./assets/logo.png" alt="image of english window">
+                <span class="font-semibold">Window</span>
+            </div>
+            <p class="font-medium text-gray-600">Providing Ed-tech Technologies Since 2025</p>
+        </div>
+        <div class="space-y-4">
+            <p class="font-semibold">Follow Us</p>
+            <div>
+                <i class="fa-brands fa-facebook"></i>
+                <i class="fa-brands fa-youtube"></i>
+                <i class="fa-brands fa-github"></i>
+                <i class="fa-brands fa-instagram"></i>
+
+            </div>
+        </div>
+    </footer>
+    
     <!--javascript file-->
   <script src="index.js"></script>  
 </body>

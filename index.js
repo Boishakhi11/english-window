@@ -1,5 +1,10 @@
 const url = "https://openapi.programming-hero.com/api/levels/all"; 
 
+const createElement = (arr) => {
+    const htmlElements = arr.map(element => `<span class="btn text-gray-500">${element} </span>`);
+    return (htmlElements.join(" "));
+}
+
 const loadLesson = () => {
     fetch(url)
     .then(res => res.json())
@@ -27,8 +32,32 @@ const loadWordDetail = async(id) => {
     console.log(url);
     const res = await fetch(url);
     const details = await res.json();
-    console.log(details);
+    displayWordDetails(details.data);
+};
+
+const displayWordDetails = (word) => {
+    const displayDetails = document.getElementById("display-details-container");
+    console.log(displayDetails);
+    displayDetails.innerHTML= 
+    ` <div class="space-y-5 p-3">
+            <h1 class="font-semibold text-2xl"> ${word.word} (<i class="fa-solid fa-microphone-lines"></i> : ${word.meaning})</h1>
+            <div>
+                <h2 class="font-semibold"> Meaning</h2>
+                <p class="text-gray-500"> ${word.meaning}</p>
+            </div>
+            <div>
+                <h2 class="font-semibold"> Example</h2>
+                <p class="text-gray-500"> ${word.sentence}</p>
+            </div>
+            <div>
+                <h2 class="font-semibold"> Synonyms</h2
+                <div>${createElement(word.synonyms)}</div>
+            </div>
+    </div>`;
+    document.getElementById("modal_box").showModal() ;
 }
+
+
 
 const displayLevelWord = (words) => {
     const wordContainer = document.getElementById("word-container");
@@ -47,9 +76,9 @@ const displayLevelWord = (words) => {
      for (const word of words) {
         const card = document.createElement("div");
         card.innerHTML = `<div class="bg-gray-200 border border-gray-400 p-4 text-center rounded-md shadow-md space-y-4" >
-            <h1 class="text-[32px] font-bold">${word.word ? word.word : "No word Found"}</h1>
+            <h1 class="text-[32px] font-bold h-[100%]">${word.word ? word.word : "No Word Found"}</h1>
             <p class="text-[20px] font-semibold"> Meaning/Pronounciation</p>
-            <p class="text-[28px] font-bold" >"${word.meaning ? word.meaning : "No Word Meaning Found"}/ ${word.pronunciation ? word.pronunciation : "No Pronunciation Found"
+            <p class="text-[28px] font-bold" >"${word.meaning ? word.meaning : "Nothing Found"}/ ${word.pronunciation ? word.pronunciation : "No Pronunciation Found"
             }"</p>
             <div class="flex justify-between items-center">
                 <button onclick="loadWordDetail(${word.id})" class="bg-[#1A91FF10] cursor-pointer hover:bg-[#1A91FF80]"><i class="fa-solid fa-circle-info"></i></button>

@@ -65,12 +65,15 @@
             <p class="text-2xl text-gray-600">You haven't select any Lesson Yet</p>
             <h2 class="text-4xl">Select a Lesson to Start</h2>
         </div>
-        <!-- Open the modal using ID.showModal() method -->
-        <button class="btn" onclick="my_modal_1.showModal()">open modal</button>
-        <dialog id="my_modal_1" class="modal">
+    </section>
+
+    <!-- Open the modal using ID.showModal() method -->
+        <dialog id="modal_box" class="modal">
         <div class="modal-box">
-            <h3 class="text-lg font-bold">Hello!</h3>
-            <p class="py-4">Press ESC key or click the button below to close</p>
+            <div id="display-details-container">
+                
+            </div>
+            
             <div class="modal-action">
             <form method="dialog">
                 <!-- if there is a button in form, it will close the modal -->
@@ -79,7 +82,6 @@
             </div>
         </div>
         </dialog>
-    </section>
     <!--javascript file-->
   <script src="index.js"></script>  
 </body>
